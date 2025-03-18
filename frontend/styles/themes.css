@@ -1,0 +1,35 @@
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --form-bg: #f5f5f5;
+    --item-bg: lightgray;
+    --button-bg: #4CAF50;
+    --button-hover: #45a049;
+    --origin-bg: lightblue;
+    --destination-bg: lightgreen;
+    --input-bg: white;
+    --input-text: black;
+    --input-border: #ccc;
+    --date-picker-bg: white;
+    --date-picker-text: black;
+    --date-picker-selected: #2196F3;
+    --date-picker-hover: #1976D2;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --form-bg: #2d2d2d;
+    --item-bg: #404040;
+    --button-bg: #2e7d32;
+    --button-hover: #1b5e20;
+    --origin-bg: #2196F3;
+    --destination-bg: #4CAF50;
+    --input-bg: #333;
+    --input-text: #fff;
+    --input-border: #555;
+    --date-picker-bg: #333;
+    --date-picker-text: #fff;
+    --date-picker-selected: #2196F3;
+    --date-picker-hover: #1976D2;
+}
