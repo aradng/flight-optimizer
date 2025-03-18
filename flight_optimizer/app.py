@@ -4,7 +4,7 @@ from flight_optimizer.api import router
 
 app = FastAPI(
     debug=True,
-    title="codal",
+    title="flight optimizer",
     docs_url="/api/docs",
     openapi_url="/api/openapi.json",
 )

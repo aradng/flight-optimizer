@@ -1,6 +1,6 @@
-const API_BASE = "http://arad-vm.perm:1234/api";
-let selectedOrigins = []; // Removed defaults
-let selectedDestinations = []; // Removed defaults
+const API_BASE = "https://flight-optimizer.up.railway.app/api";
+let selectedOrigins = [];
+let selectedDestinations = [];
 let currentType = "origin";
 let isTableView = false;
 
