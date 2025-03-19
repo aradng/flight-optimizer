@@ -28,9 +28,9 @@ function renderTableView(results) {
             <thead>
                 <tr>
                     <th>Outbound Flight</th>
-                    <th>Route</th>
+                    <th>Departure Route</th>
                     <th>Return Flight</th>
-                    <th>Route</th>
+                    <th>Arrival Route</th>
                     <th>Price (Rials)</th>
                 </tr>
             </thead>
