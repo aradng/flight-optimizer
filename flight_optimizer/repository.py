@@ -114,7 +114,7 @@ class FlightOptimizer:
         ]
 
     async def fetch_flights(
-        self, destinations: list[str], origins: list[str]
+        self, origins: list[str], destinations: list[str]
     ) -> pd.DataFrame:
         records_count = ((self.to_date - self.from_date).days + 9) // 10
         flights = []
@@ -136,20 +136,23 @@ class FlightOptimizer:
     def generate_round_trips(
         self, departures: pd.DataFrame, arrivals: pd.DataFrame
     ) -> pd.DataFrame:
-        departures = (
-            departures.groupby("date")[
-                ["price", "origin", "destination", "jdate"]
-            ]
-            .min()
-            .reset_index()
-        )
-        arrivals = (
-            arrivals.groupby("date")[
-                ["price", "origin", "destination", "jdate"]
-            ]
-            .min()
-            .reset_index()
-        )
+        # departures = (
+        #     departures.groupby("date")[
+        #         ["price", "origin", "destination", "jdate"]
+        #     ]
+        #     .min()
+        #     .reset_index()
+        # )
+        # arrivals = (
+        #     arrivals.groupby("date")[
+        #         ["price", "origin", "destination", "jdate"]
+        #     ]
+        #     .min()
+        #     .reset_index()
+        # )
+        # ^ best route only
+        arrivals = arrivals.reset_index()
+        departures = departures.reset_index()
         round_trips = departures.merge(
             arrivals, how="cross", suffixes=("_departure", "_arrival")
         )
