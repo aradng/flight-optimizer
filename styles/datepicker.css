@@ -61,7 +61,7 @@
     padding: 5px;
 }
 
-/* DateRangePicker Dark Mode Styles */
+
 [data-theme='dark'] .daterangepicker {
     background-color: var(--form-bg);
     border-color: var(--input-border);

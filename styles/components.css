@@ -29,6 +29,7 @@ input:focus {
 }
 
 .small-input {
+    pointer-events: auto;
     width: 70px;
     text-align: center;
     border-radius: 20px;
@@ -37,6 +38,8 @@ input:focus {
     background-color: var(--input-bg);
     color: var(--input-text);
     transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .small-input:focus {
@@ -80,7 +83,7 @@ input:focus {
     gap: 40px;
     padding-left: 20px;
     padding-right: 20px;
-    flex-wrap: wrap;  /* Allow wrapping */
+    flex-wrap: wrap;  
 }
 
 @media (max-width: 768px) {
@@ -121,7 +124,7 @@ input:focus {
     width: 100%;
 }
 
-/* Remove these styles as they add unwanted borders */
+
 .numeric-inputs label:first-child {
     grid-area: travel;
     padding-bottom: 10px;
@@ -138,8 +141,8 @@ input:focus {
 .search-button {
     position: static;
     background-color: var(--button-bg);
-    color: white;
-    border: none;
+    color: var(--button-text);
+    border: 1px solid var(--button-border);
     padding: 15px 30px;
     font-size: 1.1em;
     cursor: pointer;
@@ -148,6 +151,7 @@ input:focus {
 
 .search-button:hover {
     background-color: var(--button-hover);
+    color: white;
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -185,7 +189,6 @@ label[for="airport"] {
 .list-item { 
     display: inline-flex;
     align-items: center;
-    background: var(--item-bg);
     padding: 8px 16px;
     border-radius: 15px;
     cursor: pointer;
@@ -193,11 +196,21 @@ label[for="airport"] {
     font-size: 0.9em;
     transition: all 0.2s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    user-select: none;  /* Prevent text selection when clicking */
+    user-select: none;
+}
+
+#origins-list .list-item {
+    background-color: rgba(30, 64, 175, 0.15);  
+    color: var(--text-color);
+}
+
+#destinations-list .list-item {
+    background-color: rgba(22, 101, 52, 0.15);  
+    color: var(--text-color);
 }
 
 .list-item:hover {
-    background-color: #ff44445e;  /* Light red background on hover */
+    background-color: #ff44445e !important;  
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -296,28 +309,37 @@ label[for="airport"] {
 .number-control {
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: space-between;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
 }
 
 .adjust-btn {
+    pointer-events: auto;
+    position: relative;
     width: 30px;
     height: 30px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--button-bg);
-    color: white;
-    border: none;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--button-border);
     border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 2;
+    isolation: isolate;
 }
 
 .adjust-btn:hover {
-    background: var(--button-hover);
+    background-color: var(--button-hover);
+    color: white;
     transform: scale(1.1);
 }
 
@@ -337,10 +359,12 @@ label[for="airport"] {
 }
 
 .label-text {
+    pointer-events: auto;
     text-align: center;
     padding-inline: 1px;
     width: 100%;
     margin-bottom: 5px;
+    z-index: 1;
 }
 
 .spinner-overlay {
@@ -381,4 +405,13 @@ label[for="airport"] {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.numeric-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    pointer-events: auto;
+    isolation: isolate;
 }
