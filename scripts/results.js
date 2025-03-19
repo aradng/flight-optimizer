@@ -31,7 +31,7 @@ function renderTableView(results) {
                     <th>Departure Route</th>
                     <th>Return Flight</th>
                     <th>Arrival Route</th>
-                    <th>Price (Rials)</th>
+                    <th>Price (Tomans)</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,7 +72,7 @@ function renderCardView(results) {
                 }<br>
                         Date: ${formatDate(r.date_departure)}<br>
                         Jalali: ${r.jdate_departure}<br>
-                        Price: ${formatPrice(r.price_departure)} Rials
+                        Price: ${formatPrice(r.price_departure)} Tomans
                     </div>
                     <div>
                         <strong>Return Flight</strong><br>
@@ -81,11 +81,11 @@ function renderCardView(results) {
                 }<br>
                         Date: ${formatDate(r.date_arrival)}<br>
                         Jalali: ${r.jdate_arrival}<br>
-                        Price: ${formatPrice(r.price_arrival)} Rials
+                        Price: ${formatPrice(r.price_arrival)} Tomans
                     </div>
                     <div class="price-tag">Total Price: ${formatPrice(
                       r.total_price
-                    )} Rials</div>
+                    )} Tomans</div>
                 </div>
             `
               )
