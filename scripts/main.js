@@ -1,4 +1,5 @@
-const API_BASE = "https://flight-optimizer.up.railway.app/api";
+// const API_BASE = "https://flight-optimizer.up.railway.app/api";
+const API_BASE = "https://initial-dita-aradng-org-4c2cbd5e.koyeb.app/api";
 let selectedOrigins = [];
 let selectedDestinations = [];
 let currentType = "origin";

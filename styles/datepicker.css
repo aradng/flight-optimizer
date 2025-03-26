@@ -1,33 +1,45 @@
 .daterangepicker {
     background-color: var(--date-picker-bg) !important;
-    color: var(--date-picker-text) !important;
     border-color: var(--input-border) !important;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
 }
 
-.daterangepicker .calendar-table {
+.daterangepicker .calendar-table,
+.daterangepicker .drp-calendar,
+.daterangepicker .calendar,
+.daterangepicker .calendar-time {
+    background: var(--date-picker-bg) !important;
     background-color: var(--date-picker-bg) !important;
-    border-color: var(--input-border) !important;
-    border-radius: 8px;
+    border: none !important;
 }
 
-.daterangepicker td.active, 
-.daterangepicker td.active:hover,
-.daterangepicker td.selected {
-    background-color: var(--button-bg) !important;
-    color: white !important;
+.daterangepicker tbody td,
+.daterangepicker thead th {
+    background-color: var(--date-picker-bg) !important;
 }
+
+.daterangepicker td.in-range {
+    opacity: 0.6;
+}
+
 
 .daterangepicker td.in-range,
 .daterangepicker td:hover {
-    background-color: var(--date-picker-hover) !important;
-    color: var(--date-picker-text) !important;
+    background-color: var(--button-hover) !important;
+    color: var(--text-color) !important;
+}
+
+.daterangepicker td.active  {
+    background-color: var(--button-hover) !important;
+    color: var(--input-text) !important;
+    opacity: 1;
 }
 
 .daterangepicker .calendar-table .next span,
 .daterangepicker .calendar-table .prev span {
-    border-color: var(--date-picker-text) !important;
+    border-color: var(--text-color) !important;
 }
 
 .daterangepicker .drp-buttons {
@@ -36,8 +48,7 @@
 
 .daterangepicker .drp-buttons .btn {
     background-color: var(--button-bg) !important;
-    color: white !important;
-    border: none !important;
+    color: var(--input-text) !important;
     padding: 8px 16px !important;
     border-radius: 6px !important;
     transition: all 0.2s ease !important;
@@ -59,34 +70,4 @@
     border: 1px solid var(--input-border) !important;
     border-radius: 4px;
     padding: 5px;
-}
-
-
-[data-theme='dark'] .daterangepicker {
-    background-color: var(--form-bg);
-    border-color: var(--input-border);
-}
-
-[data-theme='dark'] .daterangepicker td.off,
-[data-theme='dark'] .daterangepicker td.off.in-range,
-[data-theme='dark'] .daterangepicker td.off.start-date,
-[data-theme='dark'] .daterangepicker td.off.end-date {
-    background-color: var(--bg-color);
-    color: #666;
-}
-
-[data-theme='dark'] .daterangepicker td.available:hover,
-[data-theme='dark'] .daterangepicker th.available:hover {
-    background-color: var(--button-bg);
-}
-
-[data-theme='dark'] .daterangepicker td.active,
-[data-theme='dark'] .daterangepicker td.active:hover {
-    background-color: var(--button-bg);
-    color: #fff;
-}
-
-[data-theme='dark'] .daterangepicker td,
-[data-theme='dark'] .daterangepicker th {
-    color: var(--text-color);
 }

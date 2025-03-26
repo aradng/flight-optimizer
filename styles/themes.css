@@ -21,6 +21,7 @@
     --control-shadow: 0 2px 5px rgba(0,0,0,0.1);  
     --control-shadow-hover: 0 4px 8px rgba(0,0,0,0.15);
     --list-item-shadow: 0 2px 6px rgba(0,0,0,0.15);  
+    --date-picker-bg: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -43,4 +44,5 @@
     --control-hover-bg: #1a1f2e;  
     --theme-toggle-bg: #1e3a8a;
     --theme-toggle-hover: #172554;
+    --date-picker-bg: #121620;
 }
